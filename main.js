@@ -191,7 +191,7 @@ healthcheck(callback) {
      * get() takes a callback function.
      */
 
-     this.connector.get(
+     ServiceNowConnector.get(
           (data, error) => {
         if (error) {
             console.error(`\nError returned from GET request:\n${JSON.stringify(error)}`);
@@ -218,7 +218,7 @@ healthcheck(callback) {
      * Note how the object was instantiated in the constructor().
      * post() takes a callback function.
      */
-     this.connector.post(
+     ServiceNowConnector.post(
          (data, error) => {
             if (error) {
             console.error(`\nError returned from POST request:\n${JSON.stringify(error)}`);
