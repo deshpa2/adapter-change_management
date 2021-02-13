@@ -155,6 +155,7 @@ healthcheck(callback) {
    *   system is available.
    */
   emitOnline() {
+      console.log("SYSTEM IS ONLINEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
     this.emitStatus('ONLINE');
     log.info('ServiceNow: Instance is available.');
   }
