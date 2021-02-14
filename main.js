@@ -116,7 +116,7 @@ healthcheck(callback) {
       */
       this.emitOffline();
       log.error(error+this.id);
-      return callback(error);
+      return error;
    } else {
      /**
       * Write this block.
@@ -130,7 +130,8 @@ healthcheck(callback) {
       */
       this.emitOnline();
       log.debug("Health check succesfull");
-      return callback(result);
+      console.log("*******************************");
+      return result;
    }
  });
 }
@@ -193,8 +194,10 @@ healthcheck(callback) {
           (data, error) => {
         if (error) {
             console.error(`\nError returned from GET request:\n${JSON.stringify(error)}`);
+            return callback(error);
             }
-            console.log(`\nResponse returned from GET request:\n${JSON.stringify(data)}`)
+            console.log(`\nResponse returned from GET request:\n${JSON.stringify(data)}`);
+            return callback(data);
         }
      );
   }
